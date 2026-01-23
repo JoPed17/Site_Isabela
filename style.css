@@ -1,0 +1,148 @@
+/* style.css - Estilos principais do site Isabela Batista */
+
+/* Fontes */
+body {
+  box-sizing: border-box;
+}
+.font-heading {
+  font-family: 'Cormorant Garamond', serif;
+}
+.font-body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Gradiente dourado */
+.gradient-gold {
+  background: linear-gradient(135deg, #c3a38d 0%, #eedbc6 50%, #c3a38d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Botão luxury */
+.btn-luxury {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+.btn-luxury::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s ease;
+}
+.btn-luxury:hover::before {
+  left: 100%;
+}
+
+/* Paleta de cores */
+.color-palette {
+  display: flex;
+  gap: 4px;
+}
+.color-swatch {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+.color-swatch:hover {
+  transform: scale(1.2);
+}
+
+/* Cards de serviço */
+.service-card {
+  background: linear-gradient(145deg, #1f2937 0%, #1a2332 100%);
+  border: 1px solid rgba(195, 163, 141, 0.2);
+  transition: all 0.4s ease;
+}
+.service-card:hover {
+  border-color: rgba(195, 163, 141, 0.6);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(195, 163, 141, 0.15);
+}
+
+/* Cards de depoimento */
+.testimonial-card {
+  background: linear-gradient(145deg, rgba(195, 163, 141, 0.08) 0%, rgba(195, 163, 141, 0.02) 100%);
+  border: 1px solid rgba(195, 163, 141, 0.15);
+}
+
+/* Animações */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.shimmer {
+  background: linear-gradient(90deg, #c3a38d 0%, #eedbc6 25%, #c3a38d 50%, #eedbc6 75%, #c3a38d 100%);
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.scroll-indicator {
+  animation: bounce 2s infinite;
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
+
+/* Ícones das estações */
+.season-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  transition: all 0.3s ease;
+}
+.season-spring { background: linear-gradient(135deg, #f8e1e7 0%, #fef3c7 100%); }
+.season-summer { background: linear-gradient(135deg, #dbeafe 0%, #fce7f3 100%); }
+.season-autumn { background: linear-gradient(135deg, #fde68a 0%, #f97316 100%); }
+.season-winter { background: linear-gradient(135deg, #1e3a5f 0%, #7c3aed 100%); }
+
+/* Inputs do formulário */
+.form-input {
+  background: rgba(238, 219, 198, 0.05);
+  border: 1px solid rgba(195, 163, 141, 0.3);
+  transition: all 0.3s ease;
+}
+.form-input:focus {
+  border-color: #c3a38d;
+  box-shadow: 0 0 0 3px rgba(195, 163, 141, 0.1);
+  outline: none;
+}
+
+/* Links de navegação */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #c3a38d;
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
